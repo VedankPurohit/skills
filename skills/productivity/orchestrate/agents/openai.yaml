@@ -1,0 +1,4 @@
+interface:
+  display_name: "Orchestrate"
+  short_description: "Delegate parallel work to the right available agents"
+  default_prompt: "Use $orchestrate to run this task with the smallest useful team, then synthesize and verify the result."
