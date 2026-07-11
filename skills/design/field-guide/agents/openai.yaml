@@ -1,0 +1,4 @@
+interface:
+  display_name: "Field Guide"
+  short_description: "Turn dense material into polished interactive field guides"
+  default_prompt: "Use $field-guide to turn this material into a self-contained visual field guide."
