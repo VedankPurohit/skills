@@ -16,12 +16,19 @@ Then select the skills and supported agents you want to install them on.
 
 ## Skills
 
+### Design
+
+- [`beautiful-html-documents`](./skills/design/beautiful-html-documents/SKILL.md) — Turn dense products, systems, research, and plans into polished self-contained visual field guides.
+
 ### Productivity
 
 - [`orchestrate`](./skills/productivity/orchestrate/SKILL.md) — Manage substantial coding, research, exploration, and review through the smallest useful team of available agents, then synthesize and verify their work.
 
 ## Philosophy
 
+- Encode reusable process, not one fixed output or aesthetic.
+- Make completion criteria observable and test the artifact people will actually use.
+- Let subject matter determine form instead of reaching for generic templates.
 - Delegate work, not accountability.
 - Match the team to the task instead of spawning a fixed swarm.
 - Use the least expensive model likely to meet the quality bar.
@@ -32,6 +39,10 @@ Then select the skills and supported agents you want to install them on.
 
 ```text
 skills/
+  design/
+    beautiful-html-documents/
+      SKILL.md
+      agents/openai.yaml
   productivity/
     orchestrate/
       SKILL.md
