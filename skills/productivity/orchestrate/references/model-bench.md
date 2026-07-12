@@ -32,7 +32,7 @@ Treat family names such as Opus, Sonnet, and Haiku as aliases only when the curr
 
 ## Review ensembles
 
-For an explicit thorough review, assign distinct axes rather than repeating the same generic prompt. A useful set is:
+For a meaningful review, use two independent reviewers; use three for an explicit thorough or high-stakes review. Assign distinct axes rather than repeating the same generic prompt. Choose from:
 
 1. correctness and edge cases;
 2. security and abuse paths;
@@ -40,7 +40,7 @@ For an explicit thorough review, assign distinct axes rather than repeating the 
 4. maintainability and architecture;
 5. specification and user-intent fidelity.
 
-Use three to five axes according to risk. Prefer frontier or deep-specialist models for the highest-risk axes and balanced or exploration models for the rest. The orchestrator deduplicates findings, checks the diff or evidence, and ranks only substantiated issues.
+Combine related axes when using two or three reviewers. Prefer frontier or deep-specialist models for the highest-risk lens and balanced or exploration models for the rest. For research or factual review, assign one reviewer to independently verify important claims and citations. The orchestrator deduplicates findings, checks the underlying evidence, and ranks only substantiated issues.
 
 ## Cost discipline
 

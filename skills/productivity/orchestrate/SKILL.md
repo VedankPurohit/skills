@@ -1,6 +1,6 @@
 ---
 name: orchestrate
-description: Orchestrate substantial coding, research, exploration, and review by decomposing work into bounded parallel agents, choosing available models by difficulty and cost, and synthesizing verified results. Use when a task has multiple independent workstreams, benefits from competing perspectives or specialist context, or explicitly calls for a thorough multi-angle review. Skip for trivial, tightly sequential, or coordination-heavy work.
+description: Orchestrate substantial discovery, exploration, research, planning, implementation, testing, review, and verification by assigning bounded work to available agents and synthesizing the evidence. Use when a task has multiple independent workstreams, benefits from competing perspectives or specialist context, spans distinct lifecycle phases, or calls for multi-angle review. Skip for trivial, tightly sequential, or coordination-heavy work.
 ---
 
 # Orchestrate
@@ -31,6 +31,7 @@ Delegate when at least one condition holds:
 - A bounded specialist can inspect a distinct subsystem, source set, hypothesis, or review axis.
 - Independent contexts or competing opinions reduce anchoring and materially improve confidence.
 - The task is broad enough that parallel exploration saves meaningful wall-clock time.
+- Different phases benefit from different specialists, even when those phases must run sequentially.
 
 Stay local when the task is small, tightly sequential, dominated by one shared write surface, or cheaper to complete than to specify and integrate. Parallelizable is not enough; the expected benefit must exceed coordination cost.
 
@@ -38,17 +39,32 @@ Completion criterion: either identify concrete independent workstreams or record
 
 ## 3. Build the smallest useful team
 
-Turn the work into a dependency-aware map. Spawn one worker per real branch, normally two to four. Do not create duplicate generalists unless independent replication is the point.
+Turn the work into a dependency-aware map across both branches and phases. Spawn one worker per real contribution, normally two to four at a time. Do not create duplicate generalists unless independent replication is the point.
 
 Scale beyond four only for a naturally sharded corpus, broad hypothesis search, or an explicitly exhaustive review. Cap the team by the number of independent branches and the runtime's concurrency limit, not by a fixed swarm target.
 
 Choose the least expensive model likely to clear each branch's quality bar. Reserve frontier models for difficult synthesis, high-stakes judgment, architecture, security, or an explicit quality-first request.
 
+Before adding any worker, name the unique uncertainty, artifact, or verification gap it will resolve. If that answer duplicates another worker or does not change the likely outcome, do not spawn it.
+
 For high-stakes, ambiguous, architectural, or explicitly thorough work, obtain one independent frontier opinion when available. Prefer a different model family from the primary worker to reduce correlated blind spots. Do not make this gate mandatory for routine work.
 
 Completion criterion: every planned worker has a distinct reason to exist, and no dependency requires it to wait behind unfinished work presented as parallel.
 
-## 4. Issue contracts, not vague prompts
+## 4. Match orchestration to the phase
+
+- **Discovery and exploration:** Partition the landscape by subsystem, source class, user segment, or hypothesis. Use inexpensive scouts for breadth, then follow only promising leads.
+- **Research:** Give workers non-overlapping questions or evidence sources. Require citations and use a separate verifier for material claims when accuracy matters.
+- **Planning and decisions:** Ask specialists to cover different constraints, risks, or options. Synthesize one plan; do not collect several interchangeable plans.
+- **Implementation:** Partition by file or component ownership and respect dependency order.
+- **Testing:** Partition by test layer, platform, user journey, or failure mode. Avoid rerunning the same suite without a distinct purpose.
+- **Review and verification:** Use two independent reviewers for meaningful work and three for thorough or high-stakes work. Give each a distinct lens or ask one to verify the others' claims. Do not run a crowd of identical reviewers.
+
+Orchestration may fan out within a phase and proceed sequentially between phases. Parallelism is a tool, not the definition of orchestration.
+
+Completion criterion: each delegated branch is attached to a phase, produces a distinct artifact or judgment, and has a justified place in the dependency map.
+
+## 5. Issue contracts, not vague prompts
 
 Give each worker:
 
@@ -65,7 +81,7 @@ Ask workers to report uncertainty, failed approaches, and conflicts instead of s
 
 Completion criterion: another agent can execute each contract without guessing its scope, output, or stopping point.
 
-## 5. Fan out and manage
+## 6. Fan out and manage
 
 Launch independent contracts concurrently. Keep the main agent on management work: inspect shared constraints, prepare integration, track dependencies, and prevent duplicated effort.
 
@@ -75,7 +91,7 @@ For side effects, preserve the user's authorization boundary. Delegation never g
 
 Completion criterion: every required branch has either returned a usable result or has a documented failure that the main agent has handled.
 
-## 6. Fan in and own the answer
+## 7. Fan in and own the answer
 
 Treat worker output as evidence, not truth.
 
