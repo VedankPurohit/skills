@@ -21,6 +21,8 @@ Identify the current agent runtime and root model from system-provided metadata.
 
 When model choice is available, read [the model bench](references/model-bench.md) before assigning workers.
 
+Before launching a model-specific worker, using a provider CLI, or crossing provider boundaries, read [the runtime adapters](references/runtime-adapters.md). Follow the adapter for the current callable surface; never translate an example into a tool call whose schema does not support the same fields.
+
 Completion criterion: know the root runtime when disclosed, which delegation surfaces are callable, which models those surfaces actually expose, and which constraints apply.
 
 ## 2. Pass the delegation gate
