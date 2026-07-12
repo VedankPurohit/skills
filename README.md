@@ -18,7 +18,7 @@ Then select the skills and supported agents you want to install them on.
 
 ### Design
 
-- [`field-guide`](./skills/design/field-guide/SKILL.md) — Turn dense products, systems, research, and plans into polished self-contained visual field guides.
+- [`beautiful-html-documents`](./skills/design/beautiful-html-documents/SKILL.md) — Turn dense products, systems, research, and plans into polished self-contained visual field guides.
 
 ### Productivity
 
@@ -40,7 +40,7 @@ Then select the skills and supported agents you want to install them on.
 ```text
 skills/
   design/
-    field-guide/
+    beautiful-html-documents/
       SKILL.md
       agents/openai.yaml
   productivity/

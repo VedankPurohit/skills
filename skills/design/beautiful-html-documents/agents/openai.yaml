@@ -1,0 +1,4 @@
+interface:
+  display_name: "Beautiful HTML Documents"
+  short_description: "Turn dense material into polished interactive field guides"
+  default_prompt: "Use $beautiful-html-documents to turn this material into a self-contained visual field guide."

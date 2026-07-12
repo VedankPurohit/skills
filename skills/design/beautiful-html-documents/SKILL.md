@@ -1,9 +1,9 @@
 ---
-name: field-guide
+name: beautiful-html-documents
 description: "Field-guide HTML: turn a product, system, research document, plan, or dense explanation into a polished self-contained visual guide. Use when the user asks for guide.html, a visual explainer, an interactive document, a microsite that teaches something, or wants a text wall replaced by an understandable web page."
 ---
 
-# Field Guide
+# Beautiful HTML Documents
 
 Build a **field guide**: a self-contained HTML document that makes a complex subject graspable through hierarchy, visual metaphor, and one useful interaction. The artifact is documentation people can _feel_, not a landing page that merely advertises.
 
