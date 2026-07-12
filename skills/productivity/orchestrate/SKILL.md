@@ -7,19 +7,21 @@ description: Orchestrate substantial coding, research, exploration, and review b
 
 Act as the manager. Own the goal, decomposition, boundaries, synthesis, verification, and user communication. Delegate execution when doing so materially improves speed, coverage, or independent judgment.
 
-## 1. Inventory the bench
+## 1. Identify yourself and inventory the bench
 
-Inspect the agent, collaboration, task, and model-selection capabilities actually exposed by the current runtime.
+Identify the current agent runtime and root model from system-provided metadata. Determine whether you are running as Codex, Claude Code, another agent, or an unidentified runtime. Then inspect the collaboration, task, and model-selection capabilities actually exposed to this run.
 
-- Treat callable tool metadata and successful model listings as authoritative.
-- Never infer entitlement from an installed CLI, a config file, or a model name in this skill.
-- Never spend a model call merely to test access. If a selected model returns an availability error, fall back once to the closest available tier.
+- Do not guess your identity from the repository, skill text, or installed software.
+- Treat a model as available only when the current callable agent surface lists it or an already-authorized provider exposes it through a non-billing capability listing.
+- Never infer entitlement from an installed CLI, an auth or config file, a subscription guess, or a model name in this skill. Do not inspect credentials.
+- Never spend a model call merely to test access. If a model selected from an authoritative listing still returns an availability error, fall back once to the closest listed tier.
+- Do not assume that a Codex runtime can call Claude, or that a Claude runtime can call Codex. Use cross-provider workers only through a capability explicitly available and authorized in the current run.
 - Use internal subagents by default. Create visible, user-owned tasks or threads only when the user explicitly asks for them.
 - If model choice is unsupported, delegate using the runtime default. If delegation itself is unavailable, continue in the main agent.
 
 When model choice is available, read [the model bench](references/model-bench.md) before assigning workers.
 
-Completion criterion: know which delegation surfaces are callable, whether model selection is supported, and which constraints apply.
+Completion criterion: know the root runtime when disclosed, which delegation surfaces are callable, which models those surfaces actually expose, and which constraints apply.
 
 ## 2. Pass the delegation gate
 
